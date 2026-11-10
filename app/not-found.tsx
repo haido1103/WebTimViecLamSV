@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function NotFound(){return <div className="mx-auto max-w-2xl px-5 py-28 text-center"><p className="mb-3 text-6xl font-black text-blue-600">404</p><h1 className="mb-4 text-2xl font-black">Không tìm thấy trang</h1><p className="mb-8 text-slate-500">Trang hoặc tin tuyển dụng bạn tìm không tồn tại.</p><Link href="/jobs" className="rounded-xl bg-blue-600 px-6 py-3 text-sm font-bold text-white">Khám phá việc làm</Link></div>}

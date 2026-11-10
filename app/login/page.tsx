@@ -1,0 +1,7 @@
+import Link from 'next/link';
+import { signInAction } from '@/lib/actions/auth';
+import GoogleButton from './google-button';
+export default async function Login({searchParams}:{searchParams:Promise<{error?:string;notice?:string}>}){
+ const q=await searchParams;
+ return <main className="mx-auto max-w-md px-5 py-16"><div className="rounded-3xl border bg-white p-8 shadow-sm"><h1 className="text-3xl font-black">Đăng nhập JobStudent</h1><p className="my-4 text-sm text-slate-600">Đăng nhập để ứng tuyển hoặc đăng tin tuyển dụng.</p>{q.error&&<p role="alert" className="mb-4 rounded-lg bg-red-50 p-3 text-red-700">{q.error}</p>}{q.notice&&<p className="mb-4 rounded-lg bg-green-50 p-3 text-green-700">{q.notice}</p>}<form action={signInAction} className="space-y-4"><label className="block text-sm font-semibold">Email<input className="mt-2 w-full rounded-xl border p-3" type="email" name="email" required autoComplete="email"/></label><label className="block text-sm font-semibold">Mật khẩu<input className="mt-2 w-full rounded-xl border p-3" type="password" minLength={8} name="password" required autoComplete="current-password"/></label><button className="w-full rounded-xl bg-blue-600 p-3 font-semibold text-white">Đăng nhập</button></form><div className="my-5 text-center text-slate-400">hoặc</div><GoogleButton/><p className="mt-6 text-sm">Chưa có tài khoản? <Link className="font-bold text-blue-600" href="/register">Đăng ký</Link></p></div></main>
+}

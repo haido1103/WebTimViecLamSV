@@ -1,0 +1,20 @@
+export type Job = {
+  id: string;
+  title: string;
+  company_name: string;
+  company_initials: string;
+  company_color: string;
+  company_logo_url?: string | null;
+  location: string;
+  category: string;
+  employment_type: string;
+  salary_min: number | null;
+  salary_max: number | null;
+  salary_type: string;
+  description: string;
+  requirements: string[];
+  benefits: string[];
+  posted_at: string;
+  featured?: boolean;
+  urgent?: boolean;
+};
